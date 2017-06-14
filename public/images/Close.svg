@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="3344 1514 300 300">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-Close);
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #fff;
+        stroke-width: 20px;
+      }
+    </style>
+    <clipPath id="clip-Close">
+      <rect x="3344" y="1514" width="300" height="300"/>
+    </clipPath>
+  </defs>
+  <g id="Close" class="cls-1">
+    <path id="Path_248" data-name="Path 248" class="cls-2" d="M3544,1514h100v100" transform="translate(7167 3152) rotate(180)"/>
+    <path id="Path_249" data-name="Path 249" class="cls-2" d="M3544,1514h100v100" transform="translate(-177 180)"/>
+  </g>
+</svg>

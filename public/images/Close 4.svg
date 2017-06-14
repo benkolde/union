@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="4577 1514 300 300">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-Close_4);
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #fff;
+        stroke-width: 20px;
+      }
+    </style>
+    <clipPath id="clip-Close_4">
+      <rect x="4577" y="1514" width="300" height="300"/>
+    </clipPath>
+  </defs>
+  <g id="Close_4" data-name="Close – 4" class="cls-1">
+    <g id="Group_413" data-name="Group 413" transform="translate(-333 303)">
+      <rect id="Rectangle_250" data-name="Rectangle 250" class="cls-2" width="300" height="50" transform="translate(4910 1277)"/>
+      <path id="Path_269" data-name="Path 269" class="cls-3" d="M3544,1514h50v50" transform="translate(1450.454 2845.282) rotate(-45)"/>
+    </g>
+  </g>
+</svg>

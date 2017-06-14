@@ -1,0 +1,129 @@
+body, html{
+  background-color: #FFFFFF;
+}
+
+#companiesbar{
+  background-color: #EFEFEF;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#companiesbar h4{
+  vertical-align: middle;
+  color: #000000;
+  line-height: 80px;
+  margin-left: 50px;
+  text-transform: uppercase;
+  font-size: 80%;
+}
+
+
+#companiesbar ul{
+  margin-left: 20px;
+}
+
+#companiesbar ul li{
+  display: inline;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+.companyPic img{
+  display: inline;
+  width: 60px;
+  height: auto;
+  max-width: 60px;
+  vertical-align: middle;
+  border-radius: 100%;
+}
+
+.companyMetrics{
+  width: 95%;
+  margin: 0px auto;
+  margin-top: 30px;
+  background-color: #6D7074;
+  margin-bottom: 30px;
+}
+
+.companyheader{
+  display: flex;
+  align-content: center;
+  height: 70px;
+  background-color: #535558;
+  padding-left: 20px;
+}
+
+.companyheader .companyPic{
+  line-height: 70px;
+  vertical-align: middle;
+  display: inline;
+}
+
+.companyheader .companyPic img{
+  height: 50px;
+  width: 50px;
+}
+
+.companyheader h4{
+  display: inline;
+  line-height: 70px;
+  vertical-align: middle;
+  margin-left: 25px;
+  color: #FFFFFF;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+.enter, .expand{
+  height: 30px;
+  line-height: 70px;
+  vertical-align: middle;
+}
+
+.enter:hover, .expand:hover{
+  cursor: pointer;
+  opacity: .5;
+}
+
+.expand{
+  margin-right: 30px;
+  margin-left: 10px;
+}
+
+.enter{
+  margin-right: 10px;
+}
+
+#links{
+  display: inline;
+  margin-right: 10px;
+  margin-left: auto;
+  line-height: 70px;
+  align-items: center;
+}
+
+.companymetricsdisplay table{
+  width: 100%;
+  border: none;
+}
+
+.companymetricsdisplay td{
+  list-style: none;
+  height: 220px;
+  width: 45%;
+  border: none;
+  padding: 10px;
+}
+
+.content{
+  width: 100%;
+  padding: 10px;
+}
+
+.companymetricsdisplay li{
+  background-color: #535558;
+  height: 220px;
+  list-style: none;
+}

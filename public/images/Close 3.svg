@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="4144 1514 300 300">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-Close_3);
+      }
+
+      .cls-2, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #fff;
+        stroke-width: 20px;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+    </style>
+    <clipPath id="clip-Close_3">
+      <rect x="4144" y="1514" width="300" height="300"/>
+    </clipPath>
+  </defs>
+  <g id="Close_3" data-name="Close – 3" class="cls-1">
+    <g id="Rectangle_248" data-name="Rectangle 248" class="cls-2" transform="translate(4229 1599.5)">
+      <rect class="cls-3" width="130" height="129"/>
+      <rect class="cls-4" x="10" y="10" width="110" height="109"/>
+    </g>
+    <path id="Path_263" data-name="Path 263" class="cls-2" d="M3544,1514h50v50" transform="translate(7971 3097) rotate(180)"/>
+    <path id="Path_264" data-name="Path 264" class="cls-2" d="M3544,1514h50v50" transform="translate(2863 5341) rotate(-90)"/>
+    <path id="Path_265" data-name="Path 265" class="cls-2" d="M3544,1514h50v50" transform="translate(620 233)"/>
+    <path id="Path_266" data-name="Path 266" class="cls-2" d="M3544,1514h50v50" transform="translate(5728 -2011) rotate(90)"/>
+  </g>
+</svg>

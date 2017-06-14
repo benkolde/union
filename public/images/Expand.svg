@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="3344 1178 300 300">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-Expand);
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #fff;
+        stroke-width: 20px;
+      }
+    </style>
+    <clipPath id="clip-Expand">
+      <rect x="3344" y="1178" width="300" height="300"/>
+    </clipPath>
+  </defs>
+  <g id="Expand" class="cls-1">
+    <path id="Path_250" data-name="Path 250" class="cls-2" d="M3544,1514h100v100" transform="translate(-60 -275)"/>
+    <path id="Path_251" data-name="Path 251" class="cls-2" d="M3544,1514h100v100" transform="translate(7049 2932) rotate(180)"/>
+  </g>
+</svg>
