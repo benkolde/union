@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import CompanyView from './components/Company/companyView.js';
 import BranderyView from './components/Brandery/branderyView.js';
 import Login from './components/Login/login.js';
-
-
+import {createStore, applyMiddleware} from 'redux';
+import {Provider} from 'react-redux';
+import reducers from './reducers';
 import {
   BrowserRouter as Router,
   Route,
@@ -61,6 +62,10 @@ class App extends Component{
   }
 }
 
+const createStoreWithMiddleware = applyMiddleware()(createStore);
+
 ReactDOM.render(
-  <App />, document.getElementById("root")
+  <Provider store={createStoreWithMiddleware(reducers)}>
+    <App />
+  </Provider>, document.getElementById("root")
 );

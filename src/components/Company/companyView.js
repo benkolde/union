@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Profile from './profile.js';
-import Metrics from './metrics.js';
+import Metrics from './../../containers/Company/metrics.js';
 import InputList from './inputList.js';
 import MetricsDisplayList from './metricsDisplayList.js';
 import './../Brandery/style.css';
@@ -48,27 +48,6 @@ class CompanyView extends Component{
         image : "images/retarget.png"
       }
     }
-
-    this.availableMetrics = {
-      email: {
-        name: "Email Subscribers",
-        image: "images/email.svg"
-      },
-      sales: {
-        name: "Sales",
-        image: "images/sales.svg"
-      },
-      web: {
-        name: "Web Traffic",
-        image: "images/webtraffic.svg"
-      },
-      customers: {
-        name: "New Customers",
-        image: "images/customers.svg"
-      }
-    };
-    this.companyName = "Gainful";
-    this.companyImgUrl = "images/gainful.png";
   }
 
   selectMetric(metric){
@@ -96,7 +75,7 @@ class CompanyView extends Component{
         </div>
         <Profile companyProfName={this.currentcompanies[currentcompany].name} companyProfUrl={this.currentcompanies[currentcompany].image}/>
         <div id="dashboard">
-          <Metrics availableMetrics={this.availableMetrics} onMetricSelect={(selectedMetric) => this.selectMetric(selectedMetric)}/>
+          <Metrics onMetricSelect={(selectedMetric) => this.selectMetric(selectedMetric)}/>
           <InputList availableMetrics={this.state.selectedMetrics}/>
           <MetricsDisplayList availableMetrics={this.state.selectedMetrics} />
         </div>
