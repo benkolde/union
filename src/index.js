@@ -4,6 +4,7 @@ import CompanyView from './components/Company/companyView.js';
 import BranderyView from './components/Brandery/branderyView.js';
 import Login from './components/Login/login.js';
 import {createStore, applyMiddleware} from 'redux';
+import ReduxPromise from 'redux-promise';
 import {Provider} from 'react-redux';
 import reducers from './reducers';
 import {
@@ -15,36 +16,6 @@ import {
 class App extends Component{
   constructor(props){
     super(props);//gets properties that are from components. passes vars, etc
-    this.currentcompanies = {
-      Gainful : {
-        name : "Gainful",
-        image : "images/gainful.png"
-      },
-      Consultmates : {
-        name : "Consultmates",
-        image : "images/consultmates.png"
-      },
-      SoapySoapCo : {
-        name : "Soapy Soap Co.",
-        image : "images/soapysoap.png"
-      },
-      TameTheBeast : {
-        name : "Tame The Beast",
-        image : "images/tamethebeast.png"
-      },
-      JumperThreads : {
-        name : "Jumper Threads",
-        image : "images/jumperthreads.png"
-      },
-      Obe : {
-        name : "Obe Pet Products",
-        image : "images/obe.png"
-      },
-      RetargetLinks : {
-        name : "Retarget Links",
-        image : "images/retarget.png"
-      }
-    }
   }
 
   render(){
@@ -62,7 +33,7 @@ class App extends Component{
   }
 }
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Profile from './profile.js';
+import Profile from './../../containers/Company/profile.js';
 import Metrics from './../../containers/Company/metrics.js';
 import InputList from './inputList.js';
 import MetricsDisplayList from './metricsDisplayList.js';
@@ -17,37 +17,6 @@ class CompanyView extends Component{
     this.state = {
         "selectedMetrics" : [],
     };//allows us to keep track of variables that belong to object that will change frequently.
-
-    this.currentcompanies = {
-      Gainful : {
-        name : "Gainful",
-        image : "images/gainful.png"
-      },
-      Consultmates : {
-        name : "Consultmates",
-        image : "images/consultmates.png"
-      },
-      SoapySoapCo : {
-        name : "Soapy Soap Co.",
-        image : "images/soapysoap.png"
-      },
-      TameTheBeast : {
-        name : "Tame The Beast",
-        image : "images/tamethebeast.png"
-      },
-      JumperThreads : {
-        name : "Jumper Threads",
-        image : "images/jumperthreads.png"
-      },
-      Obe : {
-        name : "Obe Pet Products",
-        image : "images/obe.png"
-      },
-      RetargetLinks : {
-        name : "Retarget Links",
-        image : "images/retarget.png"
-      }
-    }
   }
 
   selectMetric(metric){
@@ -66,14 +35,13 @@ class CompanyView extends Component{
   }
 
   render(){
-    let currentcompany = (this.props.location.search).replace(/\?/g,"");
     return(
       <div id="companyview">
         <div id="header">
           <h1>union</h1>
           <h4 id="logout"><Link to='/'>Log Out</Link></h4>
         </div>
-        <Profile companyProfName={this.currentcompanies[currentcompany].name} companyProfUrl={this.currentcompanies[currentcompany].image}/>
+        <Profile />
         <div id="dashboard">
           <Metrics onMetricSelect={(selectedMetric) => this.selectMetric(selectedMetric)}/>
           <InputList availableMetrics={this.state.selectedMetrics}/>

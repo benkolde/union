@@ -1,5 +1,5 @@
 import React , {Component} from 'react';
-import CompanyMetrics from './../../components/Brandery/companyMetrics.js';
+import CompanyMetrics from './companyMetrics.js';
 import {connect} from 'react-redux';
 
 class CompanyList extends Component{
@@ -7,15 +7,9 @@ class CompanyList extends Component{
     let CompanyListItems= [];
     for(let company in this.props.companies){
       CompanyListItems.push(
-        <CompanyMetrics
-          key={company}
-          companyimage={this.props.companies[company].image}
-          companyname={this.props.companies[company].name}
-          company={company}
-        />
+        <CompanyMetrics key={this.props.companies[company].name} company={company}/>
       );
     }
-
     return (<div>{CompanyListItems}</div>);
   }
 }

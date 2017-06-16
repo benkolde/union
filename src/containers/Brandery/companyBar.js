@@ -6,8 +6,9 @@ class CompanyBar extends Component{
   render(){
     let CompanyBarItems = [];
     for(let company in this.props.companies){
+      let currentcompany = this.props.companies[company];
       CompanyBarItems.push(
-        <CompanyImage key={this.props.companies[company].name} url={this.props.companies[company].image}/>
+        <CompanyImage key={currentcompany.name} url={currentcompany.image} name={currentcompany.name}/>
       );
     }
     return(

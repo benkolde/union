@@ -1,19 +1,13 @@
-import React, {Component} from 'react';
-import CompanyBar from './../../containers/Brandery/companyBar.js';
-import './style.css';
-import './../../index.css';
+import React from 'react';
 import {
   Link
 } from 'react-router-dom';
+import CompanyBar from './../../containers/Brandery/companyBar.js';
 import CompanyList from './../../containers/Brandery/companyList.js';
+import './style.css';
+import './../../index.css';
 
-class BranderyView extends Component{
-  constructor(props){
-    super(props);//gets properties that are from components. passes vars, etc
-  }
-
-  render(){
-
+const BranderyView = () => {
     return(
       <div id="companyapp">
         <div id="header">
@@ -24,7 +18,6 @@ class BranderyView extends Component{
         <CompanyList />
       </div>
     );
-  }
 }
 
 export default BranderyView;

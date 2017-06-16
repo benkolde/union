@@ -8,12 +8,12 @@ const CompanyMetricsDisplay = (props) => {
     "Web Traffic": [[1]],
     "New Customers": [[]]
   };
-  let CompanyMetricsDisplayItems = props.availableMetrics.map((availablemetricsitem) => {
+  let CompanyMetricsDisplayItems = [];
+  for(let metricsitem in props.availableMetrics){
+    let availablemetricsitem = props.availableMetrics[metricsitem].name;
     let emailData = DataOrig[availablemetricsitem];
-    return(
-      <MetricsDisplayListItem key={availablemetricsitem} metricName={availablemetricsitem}  metricLabel={availablemetricsitem + props.company} data={emailData}/>
-    );
-  });
+    CompanyMetricsDisplayItems.push(<MetricsDisplayListItem key={availablemetricsitem} metricName={availablemetricsitem}  metricLabel={availablemetricsitem + props.company} data={emailData}/>);
+  }
   return(
     <table className="companymetricsdisplay">
       <tbody>
