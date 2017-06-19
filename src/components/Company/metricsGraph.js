@@ -4,7 +4,7 @@ import ctPointLabels from '../../ChartistUtils/ChartistUtils.js';
 class MetricsGraph extends Component{
   componentDidMount() {
     let data = this.props.data;
-    let ChartId = this.props.metricLabel.replace(/\s+/g, '') + "chart1";
+    let ChartId = this.props.metricLabel.replace(/\s+/g, '') + "chart";
     new Chartist.Line(
       "#" + ChartId,
       {
@@ -39,7 +39,7 @@ class MetricsGraph extends Component{
   }
   render(){
     return (
-      <div id={this.props.metricLabel.replace(/\s+/g, '') + "chart1"} className="graph"></div>
+      <div id={this.props.metricLabel.replace(/\s+/g, '') + "chart"} className="graph"></div>
     );
   }
 }

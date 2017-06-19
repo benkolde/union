@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import selectCompany from '../../actions/index.js';
+import {selectCompany} from '../../actions/index.js';
 
 class CompanyMetrics extends Component{
   constructor(props){
@@ -35,15 +35,15 @@ class CompanyMetrics extends Component{
 
   render(){
     let company = this.props.company;
-    let currentcompany = this.props.companies[company];
+    let image = "images/" + company.replace(/[^A-Z0-9]+/ig, '') + ".png";
     return(
       <div className="companyMetrics">
         <div className="companyheader">
-          <div className="companyPic"><img src={currentcompany.image} alt=""/></div>
-          <h4>{currentcompany.name}</h4>
+          <div className="companyPic"><img src={image} alt=""/></div>
+          <h4>{company}</h4>
           <div id="links">
-          <Link to={{pathname: "/company", search: company}}>
-            <img className="enter" src="images/Enter 1.svg" alt="" onClick={()=>this.props.selectCompany(currentcompany)}/>
+          <Link to={{pathname: "/company", search: company.replace(/[^A-Z0-9]+/ig, '')}}>
+            <img className="enter" src="images/Enter 1.svg" alt="" onClick={()=>this.props.selectCompany(company)}/>
           </Link>
           <img className="expand" src={this.expandurl} alt="" onClick={this.handleClick}></img>
           </div>
@@ -59,7 +59,7 @@ class CompanyMetrics extends Component{
 
 function mapStateToProps(state){
   return{
-    companies: state.companiesdata,
+    companies: state.companiesdata.companies,
     availableMetrics: state.availableMetrics
   };
 }

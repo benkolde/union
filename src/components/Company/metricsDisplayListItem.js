@@ -41,7 +41,7 @@ class MetricsDisplayListItem extends Component{
             <p className="displaycontentheader">Total</p>
             <p className="displaycontentnumber">{totaldata}</p>
           </div>
-          <MetricsGraph metricName = {this.props.metricName} metricLabel={this.props.metricLabel} data={this.props.data}/>
+          <MetricsGraph metricLabel={this.props.metricLabel} data={this.props.data}/>
         </div>
     }else if(data[0].length === 1){
       totaldata = data[0];

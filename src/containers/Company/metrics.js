@@ -2,12 +2,11 @@ import React, {Component} from 'react';
 import MetricsItem from './../../components/Company/metricsItem.js';
 import {connect} from 'react-redux';
 
-
 class MetricsTable extends Component{
   render(){
     const metricsTableItems = [];
     for(let availablemetricsitem in this.props.availableMetrics){
-      metricsTableItems.push(<MetricsItem key={availablemetricsitem} metricName={this.props.availableMetrics[availablemetricsitem].name} url={this.props.availableMetrics[availablemetricsitem].image} onMetricClick={this.props.onMetricSelect}/>);
+      metricsTableItems.push(<MetricsItem key={availablemetricsitem} metricName={availablemetricsitem} url={this.props.availableMetrics[availablemetricsitem].image} onMetricClick={this.props.onMetricSelect}/>);
     }
     return(
       <div id="metrics">

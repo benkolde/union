@@ -7,7 +7,7 @@ class CompanyList extends Component{
     let CompanyListItems= [];
     for(let company in this.props.companies){
       CompanyListItems.push(
-        <CompanyMetrics key={this.props.companies[company].name} company={company}/>
+        <CompanyMetrics key={company} company={company}/>
       );
     }
     return (<div>{CompanyListItems}</div>);
@@ -16,7 +16,7 @@ class CompanyList extends Component{
 
 function mapStateToProps(state){
   return{
-    companies: state.companiesdata
+    companies: state.companiesdata.companies
   };
 }
 

@@ -7,8 +7,9 @@ class CompanyBar extends Component{
     let CompanyBarItems = [];
     for(let company in this.props.companies){
       let currentcompany = this.props.companies[company];
+      let image = "images/" + company.replace(/[^A-Z0-9]+/ig, '') + ".png";
       CompanyBarItems.push(
-        <CompanyImage key={currentcompany.name} url={currentcompany.image} name={currentcompany.name}/>
+        <CompanyImage key={company} url={image} name={company}/>
       );
     }
     return(
@@ -24,7 +25,7 @@ class CompanyBar extends Component{
 
 function mapStateToProps(state){
   return{
-    companies: state.companiesdata
+    companies: state.companiesdata.companies
   };
 }
 

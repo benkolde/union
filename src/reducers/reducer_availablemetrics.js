@@ -1,6 +1,6 @@
 export default function(){
   return({
-    email: {
+    emails: {
       name: "Email Subscribers",
       image: "images/email.svg"
     },
@@ -8,7 +8,7 @@ export default function(){
       name: "Sales",
       image: "images/sales.svg"
     },
-    web: {
+    traffic: {
       name: "Web Traffic",
       image: "images/webtraffic.svg"
     },

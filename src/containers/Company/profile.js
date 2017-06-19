@@ -8,10 +8,11 @@ class Profile extends Component{
     if(!this.props.company){
       return(<div id="companybar"></div>);
     }
+    let image = "images/" + this.props.company.replace(/[^A-Z0-9]+/ig, '') + ".png";
     return(
       <div id="companybar">
-        <ProfileImage companyProfUrl={this.props.company.image}/>
-        <CompanyName companyProfName={this.props.company.name}/>
+        <ProfileImage companyProfUrl={image}/>
+        <CompanyName companyProfName={this.props.company}/>
       </div>
     );
   }

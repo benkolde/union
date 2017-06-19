@@ -8,6 +8,7 @@ import './../../index.css';
 import {
   Link
 } from 'react-router-dom';
+import {connect} from 'react-redux';
 
 
 class CompanyView extends Component{
@@ -45,11 +46,17 @@ class CompanyView extends Component{
         <div id="dashboard">
           <Metrics onMetricSelect={(selectedMetric) => this.selectMetric(selectedMetric)}/>
           <InputList availableMetrics={this.state.selectedMetrics}/>
-          <MetricsDisplayList availableMetrics={this.state.selectedMetrics} />
+          <MetricsDisplayList company={this.props.company} />
         </div>
       </div>
     );
   }
 }
 
-export default CompanyView;
+function mapStateToProps(state){
+  return{
+    company: state.activeCompany
+  };
+}
+
+export default connect(mapStateToProps)(CompanyView);
