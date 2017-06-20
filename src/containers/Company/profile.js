@@ -9,6 +9,7 @@ class Profile extends Component{
       return(<div id="companybar"></div>);
     }
     let image = "images/" + this.props.company.replace(/[^A-Z0-9]+/ig, '') + ".png";
+    image = image.toLowerCase();
     return(
       <div id="companybar">
         <ProfileImage companyProfUrl={image}/>

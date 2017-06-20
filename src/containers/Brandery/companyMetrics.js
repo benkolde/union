@@ -36,6 +36,7 @@ class CompanyMetrics extends Component{
   render(){
     let company = this.props.company;
     let image = "images/" + company.replace(/[^A-Z0-9]+/ig, '') + ".png";
+    image = image.toLowerCase();
     return(
       <div className="companyMetrics">
         <div className="companyheader">

@@ -5,7 +5,7 @@ import BranderyView from './components/Brandery/branderyView.js';
 import Login from './components/Login/login.js';
 import {createStore, applyMiddleware} from 'redux';
 import ReduxPromise from 'redux-promise';
-import {Provider} from 'react-redux';
+import {Provider, connect} from 'react-redux';
 import reducers from './reducers';
 import {
   BrowserRouter as Router,

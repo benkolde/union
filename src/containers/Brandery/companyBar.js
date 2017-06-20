@@ -8,6 +8,7 @@ class CompanyBar extends Component{
     for(let company in this.props.companies){
       let currentcompany = this.props.companies[company];
       let image = "images/" + company.replace(/[^A-Z0-9]+/ig, '') + ".png";
+      image = image.toLowerCase();
       CompanyBarItems.push(
         <CompanyImage key={company} url={image} name={company}/>
       );
