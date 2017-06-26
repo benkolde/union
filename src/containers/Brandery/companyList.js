@@ -1,6 +1,8 @@
 import React , {Component} from 'react';
 import CompanyMetrics from './companyMetrics.js';
 import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {fetchCompanies} from '../../actions/index.js';
 
 class CompanyList extends Component{
   render() {
@@ -16,8 +18,14 @@ class CompanyList extends Component{
 
 function mapStateToProps(state){
   return{
-    companies: state.companiesdata.companies
+    companies: state.companiesdata,
+    user: state.activeUser
   };
 }
 
-export default connect(mapStateToProps)(CompanyList);
+
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({fetchCompanies}, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CompanyList);

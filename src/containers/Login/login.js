@@ -1,11 +1,8 @@
 import React, {Component} from 'react';
 import "./login.css";
-import {
-  Link
-} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {loginUser} from '../../actions/index.js';
+import {loginUser, fetchCompanies} from '../../actions/index.js';
 import {Redirect} from 'react-router';
 
 class Login extends Component{
@@ -35,13 +32,46 @@ class Login extends Component{
   }
 
   render(){
-    console.log(this.props.user);
+    let Content =
+      <div>
+        <form onSubmit={this.onFormSubmit} action="#">
+          <div className="container">
+            <label><b>Email</b></label>
+            <input
+              type="text"
+              placeholder="Name"
+              name="uname"
+              value={this.state.email}
+              onChange={this.onEmailChange}
+              required/>
+            <label><b>Password</b></label>
+            <input
+              type="password"
+              placeholder="Email"
+              name="psw"
+              value={this.state.password}
+              onChange={this.onPasswordChange}
+              required/>
+            <button type="submit">Log In</button>
+          </div>
+        </form>
+      </div>
     if(this.props.user){
-      if(this.props.user.staff === true){
+      if(this.props.user.usererror){
+        return(
+          <div id="login">
+            <h1 id="title">union</h1>
+            <p id = "error">Invalid credentials. Please try again.</p>
+            {Content}
+          </div>
+        )
+      }
+      if(this.props.user.loggedinbrand === true){
         return(
           <Redirect to="/brandery"/>
         );
-      }else if(this.props.user.staff === false){
+      }
+      if(this.props.user.loggedincomp === true){
         return(
           <Redirect to="/company" />
         );
@@ -50,27 +80,7 @@ class Login extends Component{
       return(
         <div id="login">
           <h1 id="title">union</h1>
-          <form onSubmit={this.onFormSubmit} action="#">
-            <div className="container">
-              <label><b>Email</b></label>
-              <input
-                type="text"
-                placeholder="Name"
-                name="uname"
-                value={this.state.email}
-                onChange={this.onEmailChange}
-                required/>
-              <label><b>Password</b></label>
-              <input
-                type="password"
-                placeholder="Email"
-                name="psw"
-                value={this.state.password}
-                onChange={this.onPasswordChange}
-                required/>
-              <button type="submit">Log In</button>
-            </div>
-          </form>
+          {Content}
         </div>
       );
     }
@@ -84,7 +94,7 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({loginUser}, dispatch);
+  return bindActionCreators({loginUser, fetchCompanies}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

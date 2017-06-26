@@ -14,14 +14,8 @@ class MetricsItem extends Component{
   }
 }
 
-function mapStateToProps(state){
-  return{
-    availableMetrics: state.availableMetrics
-  };
-}
-
 function mapDispatchToProps(dispatch){
   return bindActionCreators({selectMetric : selectMetric}, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MetricsItem);
+export default connect(null, mapDispatchToProps)(MetricsItem);

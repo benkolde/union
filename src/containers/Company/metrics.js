@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import MetricsItem from './../../components/Company/metricsItem.js';
+import MetricsItem from './metricsItem.js';
 import {connect} from 'react-redux';
 
 class MetricsTable extends Component{

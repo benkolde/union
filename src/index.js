@@ -2,10 +2,10 @@ import React , {Component} from 'react';
 import ReactDOM from 'react-dom';
 import CompanyView from './components/Company/companyView.js';
 import BranderyView from './components/Brandery/branderyView.js';
-import Login from './components/Login/login.js';
+import Login from './containers/Login/login.js';
 import {createStore, applyMiddleware} from 'redux';
 import ReduxPromise from 'redux-promise';
-import {Provider, connect} from 'react-redux';
+import {Provider} from 'react-redux';
 import reducers from './reducers';
 import {
   BrowserRouter as Router,
@@ -14,10 +14,6 @@ import {
 } from 'react-router-dom';
 
 class App extends Component{
-  constructor(props){
-    super(props);//gets properties that are from components. passes vars, etc
-  }
-
   render(){
     return(
       <div id="base">

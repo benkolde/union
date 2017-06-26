@@ -7,7 +7,12 @@ class CompanyMetricsDisplay extends Component {
     let CompanyMetricsDisplayItems = [];
     for(let metricsitem in this.props.availableMetrics){
       let availablemetricsitem = this.props.availableMetrics[metricsitem].name;
-      let data = [this.props.companies[this.props.company].metrics[metricsitem].data];
+      let data = [];
+      if(this.props.companies[this.props.company].metrics){
+        data = [this.props.companies[this.props.company].metrics[metricsitem].data];
+      }else{
+        data = [[]];
+      }
       CompanyMetricsDisplayItems.push(<MetricsDisplayListItem key={availablemetricsitem} metricName={availablemetricsitem}  metricLabel={availablemetricsitem + this.props.company.replace(/[^A-Z0-9]+/ig, '')} data={data}/>);
     }
     return(
@@ -37,7 +42,7 @@ class CompanyMetricsDisplay extends Component {
 
 function mapStateToProps(state){
   return{
-    companies: state.companiesdata.companies
+    companies: state.companiesdata
   };
 }
 

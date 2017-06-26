@@ -20,6 +20,15 @@
 h1{
   font-weight: bold;
 }
+
+#error{
+  width: 100%;
+  margin: 0px auto;
+  color: #494B4E;
+  font-weight: 400;
+  text-align: center;
+}
+
 /* Bordered form */
 #login form {
     width: 25%;

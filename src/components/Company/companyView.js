@@ -1,15 +1,11 @@
 import React, {Component} from 'react';
+import Header from './../../containers/Brandery/header.js';
 import Profile from './../../containers/Company/profile.js';
 import Metrics from './../../containers/Company/metrics.js';
 import InputList from './inputList.js';
-import MetricsDisplayList from './metricsDisplayList.js';
+import MetricsDisplayList from './../../containers/Company/metricsDisplayList.js';
 import './../Brandery/style.css';
 import './../../index.css';
-import {
-  Link
-} from 'react-router-dom';
-import {connect} from 'react-redux';
-
 
 class CompanyView extends Component{
   constructor(props){
@@ -38,25 +34,16 @@ class CompanyView extends Component{
   render(){
     return(
       <div id="companyview">
-        <div id="header">
-          <h1>union</h1>
-          <h4 id="logout"><Link to='/'>Log Out</Link></h4>
-        </div>
+        <Header />
         <Profile />
         <div id="dashboard">
           <Metrics onMetricSelect={(selectedMetric) => this.selectMetric(selectedMetric)}/>
           <InputList availableMetrics={this.state.selectedMetrics}/>
-          <MetricsDisplayList company={this.props.company} />
+          <MetricsDisplayList/>
         </div>
       </div>
     );
   }
 }
 
-function mapStateToProps(state){
-  return{
-    company: state.activeCompany
-  };
-}
-
-export default connect(mapStateToProps)(CompanyView);
+export default CompanyView;

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import MetricsDisplayListItem from './metricsDisplayListItem.js';
+import MetricsDisplayListItem from './../../components/Company/metricsDisplayListItem.js';
 import {connect} from 'react-redux';
 let CSSTransitionGroup = require('react-transition-group/CSSTransitionGroup');
 
@@ -8,10 +8,20 @@ let CSSTransitionGroup = require('react-transition-group/CSSTransitionGroup');
 class MetricsDisplayList extends Component {
   render(){
     let MetricsDisplayListItems = [];
-    console.log(this.props.availableMetrics);
     for(let i = 0; i < this.props.availableMetrics.length; i++) {
       let availablemetricsitem = this.props.availableMetrics[i];
-      let emailData = [this.props.companies[this.props.company].metrics[availablemetricsitem].data];
+      let emailData, selectedcompany;
+      if(this.props.user.loggedinbrand){
+        selectedcompany = this.props.companies[this.props.company];
+      }
+      else{
+        selectedcompany = this.props.companies;
+      }
+      if(selectedcompany.metrics){
+        emailData = [selectedcompany.metrics[availablemetricsitem].data];
+      }else{
+        emailData = [[]];
+      }
       MetricsDisplayListItems.push(
         <MetricsDisplayListItem
           key={availablemetricsitem}
@@ -40,7 +50,9 @@ class MetricsDisplayList extends Component {
 function mapStateToProps(state){
   return{
     availableMetrics: state.activeMetrics.arr,
-    companies: state.companiesdata.companies,
+    companies: state.companiesdata,
+    company: state.activeCompany,
+    user: state.activeUser
   };
 }
 

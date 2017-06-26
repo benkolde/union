@@ -232,7 +232,7 @@ a{
 #inputlist li, #metricsdisplay li{
   background-color: #535558;
   height: auto;
-  min-height: 220px;
+  min-height: 230px;
   margin-bottom: 20px;
 }
 
@@ -247,6 +247,13 @@ a{
   margin-bottom: 10px;
   font-weight: 200;
   letter-spacing: 1px;
+}
+
+p#updated{
+  font-style: italic;
+  margin-top: 0px;
+  font-weight: 100;
+  font-size: 90%;
 }
 
 #inputlist .inputlistNoData, #metricsdisplay .inputlistNoData{

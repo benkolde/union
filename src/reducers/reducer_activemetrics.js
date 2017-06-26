@@ -18,6 +18,8 @@ export default function(state={arr: []}, action){
       return{
         ...state, arr: []
       }
+    case 'LOGOUT_USER':
+      return {arr: []};
     default:
       return state;
   }
