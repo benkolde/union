@@ -1,7 +1,8 @@
 import axios from 'axios';
 
-const BASE_URL = "https://unionapi.herokuapp.com";
+const BASE_URL = "http://138.197.89.23:5000";
 let AUTH_TOKEN = null;
+let BRANDERY_USER = false;
 
 export function selectCompany(company){
   return{
@@ -24,23 +25,17 @@ export function loginUser(credentials){
     url: url,
     data: credentials,
     validateStatus: function (status) {
-    return status >= 200 && status < 300; // default
+    return status >= 200 && status < 300;
     },
     headers: {"Access-Control-Allow-Origin": "*"}}).then(
-
       function(response){
         AUTH_TOKEN = response.data.auth_token;
+        if(response.data.staff){
+          BRANDERY_USER = true;
+        }
         return {
           type: 'LOGIN_USER',
           payload: response.data
-        }
-      }
-    ).then(
-      function(response){
-        if(response.payload.staff){
-          return fetchCompanies(response.payload.auth_token);
-        }else if(response.payload.staff === false){
-          return fetchCompany(response.payload.auth_token, response.payload.company_id);
         }
       }
     ).catch(
@@ -54,22 +49,19 @@ export function loginUser(credentials){
   return request;
 }
 
-export function fetchCompanies(auth){
+export function fetchCompanies(){
   const url = `${BASE_URL}/companies`;
-  const request = axios({method: 'get', url: url, headers: {"Access-Control-Allow-Origin": "*", "Authorization": `Bearer ${auth}`}}).then(
+  const request = axios({method: 'get', url: url, headers: {"Access-Control-Allow-Origin": "*", "Authorization": `Bearer ${AUTH_TOKEN}`}}).then(
     function(response){
-      console.log(response.data);
       return{type: 'FETCH_COMPANIES' , payload: response.data}
   });
-
   return request;
 }
 
-export function fetchCompany(auth, id){
+export function fetchCompany(id){
   const url = `${BASE_URL}/companies/${id}`;
-  const request = axios({method: 'get', url: url, headers: {"Access-Control-Allow-Origin": "*", "Authorization": `Bearer ${auth}`}}).then(
+  const request = axios({method: 'get', url: url, headers: {"Access-Control-Allow-Origin": "*", "Authorization": `Bearer ${AUTH_TOKEN}`}}).then(
     function(response){
-      console.log(response.data);
       return{type: 'FETCH_COMPANY' , payload: response.data}
   });
   return request;
@@ -82,14 +74,24 @@ export function updateMetrics(metric, data, id){
     url: url,
     data: {[metric]: data},
     validateStatus: function (status) {
-    return status >= 200 && status < 300; // default
+    return status >= 200 && status < 300;
     },
     headers: {"Access-Control-Allow-Origin": "*", "Authorization": `Bearer ${AUTH_TOKEN}`}}).then(
       function(response){
-        console.log(response);
-        return{type: 'SUBMIT_METRIC'};
+        if(BRANDERY_USER){
+          return fetchCompanies();
+        }else{
+          return fetchCompany(id);
+        }
       }
-    )
+    ).catch(
+      function(reason){
+        return {
+          type: 'UPDATE_METRICS_ERROR',
+          payload: reason
+        };
+      }
+    );
     return request;
 }
 
@@ -100,14 +102,24 @@ export function submitMetrics(metric, data, id){
     url: url,
     data: {[metric]: data},
     validateStatus: function (status) {
-    return status >= 200 && status < 300; // default
+    return status >= 200 && status < 300;
     },
     headers: {"Access-Control-Allow-Origin": "*", "Authorization": `Bearer ${AUTH_TOKEN}`}}).then(
       function(response){
-        console.log(response);
-        return{type: 'SUBMIT_METRIC'};
+        if(BRANDERY_USER){
+          return fetchCompanies();
+        }else{
+          return fetchCompany(id);
+        }
       }
-    )
+    ).catch(
+      function(reason){
+        return {
+          type: 'SUBMIT_METRICS_ERROR',
+          payload: reason
+        };
+      }
+    );
     return request;
 }
 

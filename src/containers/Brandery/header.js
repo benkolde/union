@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {logoutUser} from '../../actions/index.js';
 import {
   Link
 } from 'react-router-dom';
-import {logoutUser} from '../../actions/index.js';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
 
+//Basic purpose is simply to provide logout functionality.
 class Header extends Component{
   constructor(props){
     super(props);

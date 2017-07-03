@@ -128,6 +128,30 @@ a{
   text-align: center;
 }
 
+.branderyBar #profilepic{
+  margin-right: 50px;
+  margin-left: 0px;
+}
+
+.branderyBar #companyname{
+  margin-right: 15px;
+  margin-left: auto;
+}
+
+#companybar a:hover .exit, #companybar a:hover h3{
+  cursor: pointer;
+  opacity: .5;
+}
+
+#companybar h3{
+  text-transform: uppercase;
+  display: inline;
+  vertical-align: middle;
+  line-height: 80px;
+  margin-left: 15px;
+  font-size: 100%;
+}
+
 #profilepic img{
   max-width: 60px;
   max-height: 60px;
@@ -159,6 +183,7 @@ a{
   vertical-align: middle;
   margin-left: 25px;
   font-weight: bold;
+  text-transform: capitalize;
 }
 
 #metrics{
@@ -181,8 +206,7 @@ a{
 #metricstable{
   margin: auto;
   margin-top: 40px;
-  height: 300px;
-  width: 300px;
+  width: 85%;
 }
 
 #metricstable , td{
@@ -191,8 +215,8 @@ a{
 }
 
 #metricstable td{
-  width: 150px;
-  height: 150px;
+  width: 50%;
+  position: relative;
   margin: 0px;
   text-align: center;
   vertical-align: bottom;
@@ -200,23 +224,33 @@ a{
   color: #FFFFFF;
   font-weight: 500;
   font-size: 80%;
-  padding: 15px;
+  padding-bottom: 50%;
+  text-transform: capitalize;
 }
+
 
 #metricstable td:hover{
   cursor: pointer;
   background: rgba(255, 98, 98, 0.5);
 }
 
+#metricstable td .metricTableContent{
+  box-sizing: content-box;
+  position:absolute;
+  height:80%; /* = 100% - 2*10% padding */
+  width:90%; /* = 100% - 2*5% padding */
+  padding: 10% 5%;
+}
+
 #metricstable td img{
   width: 40%;
-  height: auto;
   display: block;
   margin: 0px auto;
+  margin-top: 20%;
   position: relative;
-  margin-bottom: 35px;
-
+  margin-bottom: 10%;
 }
+
 
 #inputlist, #metricsdisplay{
   padding-left: 25px;
@@ -249,10 +283,58 @@ a{
   letter-spacing: 1px;
 }
 
-p#updated{
-  font-style: italic;
+#inputlist button{
+  -webkit-appearance: none;
+  width: 40%;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 30px;
+  border: none;
+  background-color: #FF6262;
+  color: #FFFFFF;
+  font-family: "helvetica neue" !important;
+  font-size: 80%;
+  text-transform: uppercase;
+}
+
+#inputlist button:hover{
+  cursor: pointer;
+  opacity: .7;
+}
+
+#inputlist #responsebuttons{
+  margin: 0px auto;
+  align-items: center;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#inputlist .confirmdisplay p{
+  font-size: 95%;
+  font-weight: 300;
+  margin-right: 20px;
+  text-align: center;
   margin-top: 0px;
-  font-weight: 100;
+}
+
+#inputlist .cancel{
+  float: left;
+}
+
+#inputlist .return button{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+#inputlist .confirm{
+  float: right;
+}
+
+p#updated{
+  color: #77797C;
+  margin-top: 0px;
+  font-weight: 300;
   font-size: 90%;
 }
 
@@ -408,7 +490,7 @@ input:focus{
   transition: opacity 500ms ease-in;
 }
 
-p.example-enter.example-enter-active {
+p.example-enter.example-enter-active{
   opacity: 1;
   transition: opacity 500ms ease-in;
 }
@@ -422,7 +504,16 @@ p.example-enter.example-enter-active {
   transition: opacity 300ms ease-in;
 }
 
-p.example-leave.example-leave-active {
+p.example-leave.example-leave-active{
   opacity: 0.01;
   transition: opacity 0ms ease-in;
+}
+
+.pages-appear {
+  opacity: 0.01;
+}
+
+.pages-appear.pages-appear-active {
+  opacity: 1;
+  transition: opacity 700ms ease-in;
 }

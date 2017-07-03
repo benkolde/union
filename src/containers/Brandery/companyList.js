@@ -1,9 +1,8 @@
 import React , {Component} from 'react';
 import CompanyMetrics from './companyMetrics.js';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import {fetchCompanies} from '../../actions/index.js';
 
+// An admin's view of each of the companies and their respective metrics.
 class CompanyList extends Component{
   render() {
     let CompanyListItems= [];
@@ -23,9 +22,4 @@ function mapStateToProps(state){
   };
 }
 
-
-function mapDispatchToProps(dispatch){
-  return bindActionCreators({fetchCompanies}, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(CompanyList);
+export default connect(mapStateToProps)(CompanyList);

@@ -30,6 +30,11 @@ body, html{
   margin-right: 10px;
 }
 
+#companiesbar img:hover{
+  cursor: pointer;
+  opacity: .5;
+}
+
 .companyPic img{
   display: inline;
   width: 60px;
@@ -80,6 +85,13 @@ body, html{
   height: 30px;
   line-height: 70px;
   vertical-align: middle;
+}
+
+.exit{
+  vertical-align: middle;
+  height: 30px;
+  transform: rotate(180deg);
+  margin-left: 50px;
 }
 
 .enter:hover, .expand:hover{

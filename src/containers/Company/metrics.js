@@ -1,12 +1,25 @@
 import React, {Component} from 'react';
-import MetricsItem from './metricsItem.js';
+import MetricsTableItem from './metricsItem.js';
 import {connect} from 'react-redux';
 
+/*TODO: eventually this table should be customized with the user's metrics that
+  they would like to track. should iterate through metrics array and create the
+  table dynamically.
+*/
+
+//The table with available metrics that user can toggle on and off.
 class MetricsTable extends Component{
   render(){
     const metricsTableItems = [];
     for(let availablemetricsitem in this.props.availableMetrics){
-      metricsTableItems.push(<MetricsItem key={availablemetricsitem} metricName={availablemetricsitem} url={this.props.availableMetrics[availablemetricsitem].image} onMetricClick={this.props.onMetricSelect}/>);
+      metricsTableItems.push(
+        <MetricsTableItem
+          key={availablemetricsitem}
+          metricName={availablemetricsitem}
+          url={this.props.availableMetrics[availablemetricsitem].image}
+          onMetricClick={this.props.onMetricSelect}
+        />
+      );
     }
     return(
       <div id="metrics">

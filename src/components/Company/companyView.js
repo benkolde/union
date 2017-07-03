@@ -7,21 +7,27 @@ import MetricsDisplayList from './../../containers/Company/metricsDisplayList.js
 import './../Brandery/style.css';
 import './../../index.css';
 
+/* Shows table of available metrics, inputs to update metrics, and
+   a display summarizing metrics changes, totals, and a graph.
+   This is a view for one specific company.
+*/
 class CompanyView extends Component{
   constructor(props){
-    super(props);//gets properties that are from components. passes vars, etc
-
+    super(props);
     this.state = {
-        "selectedMetrics" : [],
-    };//allows us to keep track of variables that belong to object that will change frequently.
+        "selectedMetrics" : [], //Which metrics from the table are toggled on
+    };
+    this.selectMetric.bind(this);
   }
 
   selectMetric(metric){
     if(this.state.selectedMetrics.indexOf(metric) === -1){
+      //if the metric isn't toggled on, add to end of list.
       this.setState({[metric] : true});
       this.state.selectedMetrics.push(metric);
       document.getElementById(metric.replace(/\s+/g, '') + "Cell").style.background = "rgba(255, 98, 98, 1.0)";
     }else{
+      //remove metric from the list
       this.setState({[metric] : false});
       let metricIndex = this.state.selectedMetrics.indexOf(metric);
       if(metricIndex > -1){

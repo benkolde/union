@@ -3,14 +3,13 @@ import MetricsDisplayListItem from './../../components/Company/metricsDisplayLis
 import {connect} from 'react-redux';
 let CSSTransitionGroup = require('react-transition-group/CSSTransitionGroup');
 
-
-
+//List of the metrics that the user has toggled into view.
 class MetricsDisplayList extends Component {
   render(){
     let MetricsDisplayListItems = [];
     for(let i = 0; i < this.props.availableMetrics.length; i++) {
       let availablemetricsitem = this.props.availableMetrics[i];
-      let emailData, selectedcompany;
+      let metricData, selectedcompany;
       if(this.props.user.loggedinbrand){
         selectedcompany = this.props.companies[this.props.company];
       }
@@ -18,16 +17,16 @@ class MetricsDisplayList extends Component {
         selectedcompany = this.props.companies;
       }
       if(selectedcompany.metrics){
-        emailData = [selectedcompany.metrics[availablemetricsitem].data];
+        metricData = [selectedcompany.metrics[availablemetricsitem].data];
       }else{
-        emailData = [[]];
+        metricData = [[]];
       }
       MetricsDisplayListItems.push(
         <MetricsDisplayListItem
           key={availablemetricsitem}
           metricName={availablemetricsitem}
           metricLabel={availablemetricsitem}
-          data={emailData}
+          data={metricData}
         />
       );
     }

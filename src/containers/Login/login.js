@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import "./login.css";
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {loginUser, fetchCompanies} from '../../actions/index.js';
+import {loginUser} from '../../actions/index.js';
 import {Redirect} from 'react-router';
+import "./login.css";
+let CSSTransitionGroup = require('react-transition-group/CSSTransitionGroup');
 
 class Login extends Component{
   constructor(props){
@@ -39,7 +40,7 @@ class Login extends Component{
             <label><b>Email</b></label>
             <input
               type="text"
-              placeholder="Name"
+              placeholder="Email"
               name="uname"
               value={this.state.email}
               onChange={this.onEmailChange}
@@ -47,7 +48,7 @@ class Login extends Component{
             <label><b>Password</b></label>
             <input
               type="password"
-              placeholder="Email"
+              placeholder="Password"
               name="psw"
               value={this.state.password}
               onChange={this.onPasswordChange}
@@ -61,7 +62,14 @@ class Login extends Component{
         return(
           <div id="login">
             <h1 id="title">union</h1>
+            <CSSTransitionGroup
+               transitionName="example"
+               transitionAppear={true}
+               transitionAppearTimeout={500}
+               transitionEnterTimeout={500}
+               transitionLeaveTimeout={300}>
             <p id = "error">Invalid credentials. Please try again.</p>
+          </CSSTransitionGroup>
             {Content}
           </div>
         )
@@ -94,7 +102,7 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({loginUser, fetchCompanies}, dispatch);
+  return bindActionCreators({loginUser}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

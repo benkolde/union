@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import CompanyImage from './../../components/Brandery/companyImage.js';
 import {connect} from 'react-redux';
 
+/*Contains all company images at the top of page.
+  Able to click on each image to scroll to their metrics section.
+*/
 class CompanyBar extends Component{
   render(){
     let CompanyBarItems = [];
@@ -13,13 +16,13 @@ class CompanyBar extends Component{
       );
     }
     return(
-        <div id="companiesbar">
-          <h4>Companies</h4>
-          <ul>
-            {CompanyBarItems}
-          </ul>
-        </div>
-      );
+      <div id="companiesbar">
+        <h4>Companies</h4>
+        <ul>
+          {CompanyBarItems}
+        </ul>
+      </div>
+    );
   }
 }
 
