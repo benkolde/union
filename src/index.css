@@ -236,7 +236,8 @@ a{
 
 #metricstablediv{
   height: 65%;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   margin-top: 40px;
   padding-bottom: 40px;
 }
@@ -289,7 +290,8 @@ a{
   padding-right: 25px;
   height: 70vh;
   width: 25%;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   border-right: 3px solid #535558;
