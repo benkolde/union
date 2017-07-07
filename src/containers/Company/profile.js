@@ -34,6 +34,7 @@ class Profile extends Component{
         <div id="companybar">
           <ProfileImage companyProfUrl={image} companyProfName={this.props.company}/>
           <CompanyName companyProfName={this.props.company}/>
+          <h3 id="changepswd" onClick={()=>{this.props.onChangePassword();}}>Change Password</h3>
         </div>
       );
     }

@@ -34,7 +34,7 @@ class Login extends Component{
 
   render(){
     let Content =
-      <div>
+      <div className="login">
         <form onSubmit={this.onFormSubmit} action="#">
           <div className="container">
             <label><b>Email</b></label>
@@ -60,7 +60,7 @@ class Login extends Component{
     if(this.props.user){
       if(this.props.user.usererror){
         return(
-          <div id="login">
+          <div>
             <h1 id="title">union</h1>
             <CSSTransitionGroup
                transitionName="example"
@@ -86,7 +86,7 @@ class Login extends Component{
       }
     }else{
       return(
-        <div id="login">
+        <div>
           <h1 id="title">union</h1>
           {Content}
         </div>

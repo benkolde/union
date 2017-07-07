@@ -67,6 +67,19 @@ export function fetchCompany(id){
   return request;
 }
 
+export function fetchCompanyData(id, isBrand){
+  const url = `${BASE_URL}/companies/${id}/metrics`;
+  const request = axios({method: 'get', url: url, headers: {"Access-Control-Allow-Origin": "*", "Authorization": `Bearer ${AUTH_TOKEN}`}}).then(
+    function(response){
+      if(isBrand){
+        return{type: 'FETCH_COMPANIES_DATA', payload: response.data, company: id};
+      }else{
+        return{type: 'FETCH_COMPANY_DATA' , payload: response.data};
+      }
+  });
+  return request;
+}
+
 export function updateMetrics(metric, data, id){
   const url = `${BASE_URL}/companies/${id}/metrics`;
   const request = axios(
@@ -79,9 +92,9 @@ export function updateMetrics(metric, data, id){
     headers: {"Access-Control-Allow-Origin": "*", "Authorization": `Bearer ${AUTH_TOKEN}`}}).then(
       function(response){
         if(BRANDERY_USER){
-          return fetchCompanies();
+          return fetchCompanyData(id, true);
         }else{
-          return fetchCompany(id);
+          return fetchCompanyData(id, false);
         }
       }
     ).catch(
@@ -107,9 +120,9 @@ export function submitMetrics(metric, data, id){
     headers: {"Access-Control-Allow-Origin": "*", "Authorization": `Bearer ${AUTH_TOKEN}`}}).then(
       function(response){
         if(BRANDERY_USER){
-          return fetchCompanies();
+          return fetchCompanyData(id, true);
         }else{
-          return fetchCompany(id);
+          return fetchCompanyData(id, false);
         }
       }
     ).catch(
@@ -121,6 +134,33 @@ export function submitMetrics(metric, data, id){
       }
     );
     return request;
+}
+
+export function changeUser(credentials){
+  const url = `${BASE_URL}/auth/change`;
+  const request = axios(
+    {method: 'put',
+    url: url,
+    data: credentials,
+    validateStatus: function (status) {
+    return status >= 200 && status < 300;
+    },
+    headers: {"Access-Control-Allow-Origin": "*", "Authorization": `Bearer ${AUTH_TOKEN}`}}).then(
+      function(response){
+        return {
+          type: 'CHANGE_USER',
+          payload: response.data
+        }
+      }
+    ).catch(
+      function(reason){
+        return {
+          type: 'CHANGE_USER_ERROR',
+          payload: reason
+        };
+      }
+    );
+  return request;
 }
 
 export function logoutUser(){

@@ -11,9 +11,9 @@ class MetricsDisplayListItem extends Component{
     let datachange = data[0][data[0].length - 1] - data[0][data[0].length - 2];
     //set the weekly change indicator's color according to the difference b/w data points
     if(datachange < 0){
-      document.getElementById(this.props.metricLabel.replace(/\s+/g, '') + "display").getElementsByClassName("displaycontentchange")[0].style.color = "#FF6262";
+      document.getElementById(this.props.metricName.replace(/\s+/g, '') + "display").getElementsByClassName("displaycontentchange")[0].style.color = "#FF6262";
     }else if(datachange === 0){
-      document.getElementById(this.props.metricLabel.replace(/\s+/g, '') + "display").getElementsByClassName("displaycontentchange")[0].style.color = "#FFFFFF";
+      document.getElementById(this.props.metricName.replace(/\s+/g, '') + "display").getElementsByClassName("displaycontentchange")[0].style.color = "#FFFFFF";
     }
   }
 
@@ -22,11 +22,11 @@ class MetricsDisplayListItem extends Component{
     let datachange = data[0][data[0].length - 1] - data[0][data[0].length - 2];
     //update the weekly change indicator's color if the metrics are updated.
     if(datachange < 0){
-      document.getElementById(this.props.metricLabel.replace(/\s+/g, '') + "display").getElementsByClassName("displaycontentchange")[0].style.color = "#FF6262";
+      document.getElementById(this.props.metricName.replace(/\s+/g, '') + "display").getElementsByClassName("displaycontentchange")[0].style.color = "#FF6262";
     }else if(datachange > 0){
-      document.getElementById(this.props.metricLabel.replace(/\s+/g, '') + "display").getElementsByClassName("displaycontentchange")[0].style.color = "#62FFB7";
+      document.getElementById(this.props.metricName.replace(/\s+/g, '') + "display").getElementsByClassName("displaycontentchange")[0].style.color = "#62FFB7";
     }else if(datachange === 0){
-      document.getElementById(this.props.metricLabel.replace(/\s+/g, '') + "display").getElementsByClassName("displaycontentchange")[0].style.color = "#FFFFFF";
+      document.getElementById(this.props.metricName.replace(/\s+/g, '') + "display").getElementsByClassName("displaycontentchange")[0].style.color = "#FFFFFF";
     }
   }
 
@@ -63,7 +63,7 @@ class MetricsDisplayListItem extends Component{
             <p className="displaycontentheader">Total</p>
             <p className="displaycontentnumber">{totaldata}</p>
           </div>
-          <MetricsGraph metricLabel={this.props.metricLabel} data={this.props.data}/>
+          <MetricsGraph metricLabel={this.props.metricName} data={this.props.data}/>
         </div>
     }else if(data[0].length === 1){
       //We only have one data point. We won't compute change or display the graph.
@@ -100,9 +100,9 @@ class MetricsDisplayListItem extends Component{
       </div>
     }
     return(
-      <li id={this.props.metricLabel.replace(/\s+/g, '') + "display"}>
+      <li id={this.props.metricName.replace(/\s+/g, '') + "display"}>
         <div className="dashboardheader">
-          <h4>{this.props.metricName}</h4>
+          <h4>{this.props.metricLabel}</h4>
         </div>
         {DisplayContent}
       </li>

@@ -3,9 +3,11 @@ import Header from './../../containers/Brandery/header.js';
 import Profile from './../../containers/Company/profile.js';
 import Metrics from './../../containers/Company/metrics.js';
 import InputList from './inputList.js';
+import Password from './../../containers/Login/password.js';
 import MetricsDisplayList from './../../containers/Company/metricsDisplayList.js';
 import './../Brandery/style.css';
 import './../../index.css';
+let CSSTransitionGroup = require('react-transition-group/CSSTransitionGroup');
 
 /* Shows table of available metrics, inputs to update metrics, and
    a display summarizing metrics changes, totals, and a graph.
@@ -16,8 +18,10 @@ class CompanyView extends Component{
     super(props);
     this.state = {
         "selectedMetrics" : [], //Which metrics from the table are toggled on
+        "password": false
     };
-    this.selectMetric.bind(this);
+    this.selectMetric = this.selectMetric.bind(this);
+    this.changePassword = this.changePassword.bind(this);
   }
 
   selectMetric(metric){
@@ -37,18 +41,46 @@ class CompanyView extends Component{
     }
   }
 
+  changePassword(event){
+    this.setState({"password": !this.state.password});
+  }
+
   render(){
-    return(
-      <div id="companyview">
-        <Header />
-        <Profile />
-        <div id="dashboard">
-          <Metrics onMetricSelect={(selectedMetric) => this.selectMetric(selectedMetric)}/>
-          <InputList availableMetrics={this.state.selectedMetrics}/>
-          <MetricsDisplayList/>
+    if(this.state.password){
+      return(
+        <div id="companyview">
+          <Header />
+          <Profile onChangePassword = {() => this.changePassword()}/>
+            <div id="password">
+              <CSSTransitionGroup
+                 transitionName="password"
+                 transitionAppear={true}
+                 transitionAppearTimeout={500}
+                 transitionEnterTimeout={500}
+                 transitionLeaveTimeout={500}>
+                 <Password onChangePassword= {() => this.changePassword()}/>
+              </CSSTransitionGroup>
+            </div>
+          <div id="dashboard">
+            <Metrics onMetricSelect={(selectedMetric) => this.selectMetric(selectedMetric)}/>
+            <InputList availableMetrics={this.state.selectedMetrics}/>
+            <MetricsDisplayList/>
+          </div>
         </div>
-      </div>
-    );
+      );
+    }else{
+      return(
+        <div id="companyview">
+          <Header />
+          <Profile onChangePassword = {() => this.changePassword()}/>
+          <div id="dashboard">
+            <Metrics onMetricSelect={(selectedMetric) => this.selectMetric(selectedMetric)}/>
+            <InputList availableMetrics={this.state.selectedMetrics}/>
+            <MetricsDisplayList/>
+          </div>
+        </div>
+      );
+    }
   }
 }
 

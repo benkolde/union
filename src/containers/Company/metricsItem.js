@@ -22,7 +22,7 @@ class MetricsItem extends Component{
       >
         <div className="metricTableContent">
         <img src={this.props.url} alt={this.props.metricName}/>
-        {this.props.metricName}
+        {this.props.metricLabel}
       </div>
       </td>
     );

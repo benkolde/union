@@ -23,8 +23,8 @@ class CompanyMetricsDisplay extends Component {
       CompanyMetricsDisplayItems.push(
         <MetricsDisplayListItem
           key={metricsItemName}
-          metricName={metricsItemName}
-          metricLabel={metricsItemName + this.props.company.replace(/[^A-Z0-9]+/ig, '')}
+          metricName={(metricsItemName + this.props.company).replace(/[^A-Z0-9]+/ig, '')}
+          metricLabel={this.props.availableMetrics[metricsItem].name}
           data={data}
         />
       );
@@ -46,6 +46,54 @@ class CompanyMetricsDisplay extends Component {
             </td>
             <td>
               {CompanyMetricsDisplayItems[3]}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {CompanyMetricsDisplayItems[4]}
+            </td>
+            <td>
+              {CompanyMetricsDisplayItems[5]}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {CompanyMetricsDisplayItems[6]}
+            </td>
+            <td>
+              {CompanyMetricsDisplayItems[7]}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {CompanyMetricsDisplayItems[8]}
+            </td>
+            <td>
+              {CompanyMetricsDisplayItems[9]}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {CompanyMetricsDisplayItems[10]}
+            </td>
+            <td>
+              {CompanyMetricsDisplayItems[11]}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {CompanyMetricsDisplayItems[12]}
+            </td>
+            <td>
+              {CompanyMetricsDisplayItems[13]}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {CompanyMetricsDisplayItems[14]}
+            </td>
+            <td>
+              {CompanyMetricsDisplayItems[15]}
             </td>
           </tr>
         </tbody>

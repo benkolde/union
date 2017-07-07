@@ -7,8 +7,8 @@ let CSSTransitionGroup = require('react-transition-group/CSSTransitionGroup');
 class MetricsDisplayList extends Component {
   render(){
     let MetricsDisplayListItems = [];
-    for(let i = 0; i < this.props.availableMetrics.length; i++) {
-      let availablemetricsitem = this.props.availableMetrics[i];
+    for(let i = 0; i < this.props.activeMetrics.length; i++) {
+      let availablemetricsitem = this.props.activeMetrics[i];
       let metricData, selectedcompany;
       if(this.props.user.loggedinbrand){
         selectedcompany = this.props.companies[this.props.company];
@@ -21,11 +21,12 @@ class MetricsDisplayList extends Component {
       }else{
         metricData = [[]];
       }
+      console.log(availablemetricsitem);
       MetricsDisplayListItems.push(
         <MetricsDisplayListItem
           key={availablemetricsitem}
           metricName={availablemetricsitem}
-          metricLabel={availablemetricsitem}
+          metricLabel={this.props.availableMetrics[availablemetricsitem].name}
           data={metricData}
         />
       );
@@ -48,7 +49,8 @@ class MetricsDisplayList extends Component {
 
 function mapStateToProps(state){
   return{
-    availableMetrics: state.activeMetrics.arr,
+    activeMetrics: state.activeMetrics.arr,
+    availableMetrics: state.availableMetrics,
     companies: state.companiesdata,
     company: state.activeCompany,
     user: state.activeUser

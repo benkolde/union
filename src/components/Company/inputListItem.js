@@ -150,7 +150,7 @@ class InputListItem extends Component{
     return(
         <li id={this.props.metricName.replace(/\s+/g, '')+ "input"}>
             <div className="dashboardheader">
-              <h4>{this.props.metricName}</h4>
+              <h4>{this.props.activeMetrics[this.props.metricName].name}</h4>
             </div>
             <p>Week of <span className="date">{(firstDate.getMonth()+1) + "/" + firstDate.getDate() + "-" + (lastDate.getMonth() + 1) + "/" + lastDate.getDate()}</span></p>
             <p id="updated">Last Updated: {(lastUpdated.getMonth() + 1) + "/" + (lastUpdated.getDate()) + "/" + (lastUpdated.getFullYear())}</p>
@@ -166,6 +166,7 @@ function mapStateToProps(state){
     company: state.activeCompany,
     user: state.activeUser,
     status: state.companyDataStatus,
+    activeMetrics: state.availableMetrics,
   };
 }
 

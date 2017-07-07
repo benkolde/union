@@ -152,6 +152,16 @@ a{
   font-size: 100%;
 }
 
+#companybar #changepswd{
+  margin-right: 50px;
+  margin-left: auto;
+}
+
+#changepswd:hover{
+  cursor: pointer;
+  opacity: .5;
+}
+
 #profilepic img{
   max-width: 60px;
   max-height: 60px;
@@ -205,8 +215,14 @@ a{
 
 #metricstable{
   margin: auto;
-  margin-top: 40px;
   width: 85%;
+}
+
+#metricstablediv{
+  height: 65%;
+  overflow: scroll;
+  margin-top: 40px;
+  padding-bottom: 40px;
 }
 
 #metricstable , td{
@@ -243,7 +259,7 @@ a{
 }
 
 #metricstable td img{
-  width: 40%;
+  max-height: 40%;
   display: block;
   margin: 0px auto;
   margin-top: 20%;
@@ -509,11 +525,44 @@ p.example-leave.example-leave-active{
   transition: opacity 0ms ease-in;
 }
 
-.pages-appear {
+.pages-appear, .password-appear {
   opacity: 0.01;
 }
 
 .pages-appear.pages-appear-active {
   opacity: 1;
   transition: opacity 700ms ease-in;
+}
+
+.password-appear.password-appear-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+#password{
+  position: absolute;
+  background-color: rgba(0,0,0, .5);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 50;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  text-align: center;
+}
+
+#password img{
+  height: 20px;
+  width: 25%;
+  padding-right: 20%;
+  margin-top: 50px;
+}
+
+#password img:hover{
+  opacity: .5;
+  cursor: pointer;
+}
+
+#password p{
+  color: white;
 }

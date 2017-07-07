@@ -1,9 +1,13 @@
-#login{
+.login{
     font-family: "futura";
     font-weight: 900;
     margin: 0;
     width: 100vw;
     height: 100vh;
+}
+
+#passwordform{
+  height: 50vh;
 }
 
 #title {
@@ -29,19 +33,33 @@ h1{
   text-align: center;
 }
 
+#change{
+  width: 25%;
+  margin: auto;
+  padding-left: 20px;
+  font-size: 90%;
+  color: #FF6262;
+  text-decoration: underline;
+}
+
+#change:hover{
+  font-style: italic;
+  cursor: pointer;
+}
+
 /* Bordered form */
-#login form {
+.login form {
     width: 25%;
     font-family: "helvetica neue";
     font-weight: 300;
     margin: auto;
 }
 
-#login label   {
+.login label   {
     display: none;
 }
 /* Full-width inputs */
-#login input[type=text], #login input[type=password] {
+.login input[type=text], .login input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -50,29 +68,45 @@ h1{
     box-sizing: border-box;
 }
 
-#login input[type=text]:focus, #login input[type=password]:focus {
+
+
+.login input[type=text]:focus, .login input[type=password]:focus{
     outline: none;
     background-color: rgba(255,98,98, .1);
     opacity: 1;
 }
 
-#login ::placeholder   {
-    color: #FF6262;
+ #passwordform input[type=text],  #passwordform input[type=password]{
+   background-color: #6D7074;
+   box-shadow: 0 0 0 30px rgba(255,98,98, .3) inset;
+ }
 
+.login ::placeholder   {
+    color: #FF6262;
 }
-#login input[placeholder=Email], #login [placeholder=Password] {
+
+#passwordform ::placeholder{
+  color: #FFFFFF;
+}
+
+.login input:-webkit-autofill{
+  -webkit-box-shadow: 0 0 0 30px white inset;
+  -webkit-text-fill-color: #FF6262 !important;
+}
+
+.login input[placeholder=Email], .login [placeholder=Password], .login [placeholder="Old Password"], .login [placeholder="New Password"]{
     color: #FF6262;
     font-size: 10pt;
     font-family: "helvetica neue", helvetica, sans-serif;
 
 }
 
-#login button[type=Submit] {
+.login button[type=Submit] {
     font-size: 10pt;
     font-family: helvetica neue, helvetica, sans-serif;
 }
 /* Set a style for all buttons */
-#login button {
+.login button {
     background-color: #FF6262;
     color: white;
     padding: 14px 20px;
@@ -82,8 +116,15 @@ h1{
 }
 
 /* Add a hover effect for buttons */
-#login button:hover {
+.login button:hover {
     box-shadow: 0px 5px 20px #c1c1c1;
+    transition: 0.3s;
+    transition-duration: .3s;
+    cursor: pointer;
+}
+
+#passwordform button:hover {
+    box-shadow: 0px 5px 20px #252627;
     transition: 0.3s;
     transition-duration: .3s;
     cursor: pointer;
@@ -91,17 +132,21 @@ h1{
 
 
 /* Add padding to containers */
-#login .container {
+.login .container {
     padding: 16px;
+}
+
+#passwordform{
+  margin-top: 25vh;
 }
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
-    #login span.psw {
+    .login span.psw {
         display: block;
         float: none;
     }
-    #login .cancelbtn {
+    .login .cancelbtn {
         width: 100%;
     }
 }

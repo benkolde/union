@@ -16,6 +16,7 @@ class MetricsTable extends Component{
         <MetricsTableItem
           key={availablemetricsitem}
           metricName={availablemetricsitem}
+          metricLabel={this.props.availableMetrics[availablemetricsitem].name}
           url={this.props.availableMetrics[availablemetricsitem].image}
           onMetricClick={this.props.onMetricSelect}
         />
@@ -27,6 +28,7 @@ class MetricsTable extends Component{
           <h4>Your Metrics</h4>
         </div>
         <p>Please select the metrics that your team would like to track each week.</p>
+        <div id="metricstablediv">
         <table id="metricstable">
           <tbody>
             <tr>
@@ -37,8 +39,33 @@ class MetricsTable extends Component{
               {metricsTableItems[2]}
               {metricsTableItems[3]}
             </tr>
+            <tr>
+              {metricsTableItems[4]}
+              {metricsTableItems[5]}
+            </tr>
+            <tr>
+              {metricsTableItems[6]}
+              {metricsTableItems[7]}
+            </tr>
+            <tr>
+              {metricsTableItems[8]}
+              {metricsTableItems[9]}
+            </tr>
+            <tr>
+              {metricsTableItems[10]}
+              {metricsTableItems[11]}
+            </tr>
+            <tr>
+              {metricsTableItems[12]}
+              {metricsTableItems[13]}
+            </tr>
+            <tr>
+              {metricsTableItems[14]}
+              {metricsTableItems[15]}
+            </tr>
           </tbody>
         </table>
+      </div>
       </div>
     );
   }
