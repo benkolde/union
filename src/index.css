@@ -186,6 +186,8 @@ a{
 .dashboardheader{
   height: 50px;
   background-color: #494B4E;
+  display: flex;
+  align-items: center;
 }
 
 .dashboardheader h4{
@@ -194,6 +196,20 @@ a{
   margin-left: 25px;
   font-weight: bold;
   text-transform: capitalize;
+  display: inline-flex;
+}
+
+.dashboardheader #description{
+  display: inline-flex;
+  margin-right: 25px;
+  margin-left: auto;
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+#description:hover{
+  font-style: italic;
+  cursor: pointer;
 }
 
 #metrics{

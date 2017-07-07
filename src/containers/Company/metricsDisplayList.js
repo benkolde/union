@@ -21,7 +21,6 @@ class MetricsDisplayList extends Component {
       }else{
         metricData = [[]];
       }
-      console.log(availablemetricsitem);
       MetricsDisplayListItems.push(
         <MetricsDisplayListItem
           key={availablemetricsitem}

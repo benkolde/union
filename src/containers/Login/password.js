@@ -2,12 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {changeUser} from '../../actions/index.js';
-import {Redirect} from 'react-router';
-import {
-  Link
-} from 'react-router-dom';
 import "./login.css";
-let CSSTransitionGroup = require('react-transition-group/CSSTransitionGroup');
 
 class Password extends Component{
   constructor(props){

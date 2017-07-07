@@ -2,7 +2,6 @@ import React , {Component} from 'react';
 import ReactDOM from 'react-dom';
 import CompanyView from './components/Company/companyView.js';
 import BranderyView from './components/Brandery/branderyView.js';
-import Home from './components/Home/home.js';
 import Login from './containers/Login/login.js';
 import {createStore, applyMiddleware} from 'redux';
 import ReduxPromise from 'redux-promise';
