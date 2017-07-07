@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = "http://138.197.89.23:5000";
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 let AUTH_TOKEN = null;
 let BRANDERY_USER = false;
 
