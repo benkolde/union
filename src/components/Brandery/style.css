@@ -22,12 +22,19 @@ body, html{
 
 #companiesbar ul{
   margin-left: 20px;
+  overflow: scroll;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-content: center;
 }
 
 #companiesbar ul li{
-  display: inline;
   margin-left: 5px;
   margin-right: 10px;
+  flex-shrink: 0;
+  align-items: center;
+  line-height: 80px;
 }
 
 #companiesbar img:hover{
@@ -35,8 +42,12 @@ body, html{
   opacity: .5;
 }
 
+#companiesbarimages{
+  width: 75%;
+  margin-left: 10px;
+}
+
 .companyPic img{
-  display: inline;
   width: 60px;
   height: auto;
   max-width: 60px;
@@ -50,6 +61,10 @@ body, html{
   margin-top: 30px;
   background-color: #6D7074;
   margin-bottom: 30px;
+}
+
+#companylist{
+  width: 100%;
 }
 
 .companyheader{
@@ -116,18 +131,30 @@ body, html{
   align-items: center;
 }
 
- table{
+ .companymetricsdisplay .table{
   width: 100%;
   border: none;
+  display: table;
 }
 
-.companymetricsdisplay td{
+.companymetricsdisplay .tbody{
+  width: 100%;
+}
+
+.companymetricsdisplay .tr{
+  width: 100%;
+  min-width: 100%;
+}
+
+
+.companymetricsdisplay .td{
   list-style: none;
-  height: 220px;
-  width: 45%;
+  width: 50%;
   border: none;
   padding: 10px;
+  display: inline-block;
 }
+
 
 .content{
   width: 100%;
@@ -138,4 +165,50 @@ body, html{
   background-color: #535558;
   height: 220px;
   list-style: none;
+}
+
+@media screen and (max-width: 500px) {
+  #companiesbarimages{
+    width: 50%;
+    margin-left: 10px;
+  }
+  .companyMetrics{
+    width: 100%;
+  }
+
+  .companymetricsdisplay .table{
+   width: 100%;
+   height: auto;
+   border: none;
+   display: inline-block;
+ }
+
+ .companymetricsdisplay .tbody{
+   display: flex;
+   height: 240px;
+   overflow: scroll;
+   width: 100%;
+ }
+
+ .companymetricsdisplay .tr{
+   width: 180%;
+   display: flex;
+   flex-shrink: 0;
+   height: 240px;
+ }
+
+ .companymetricsdisplay .td{
+   list-style: none;
+   height: 220px;
+   width: 50%;
+   flex-shrink: 0;
+   border: none;
+   padding: 10px;
+   display: inline-block;
+   margin-bottom: 20px;
+ }
+
+.content{
+   max-height: 280px;
+ }
 }

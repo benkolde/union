@@ -13,7 +13,7 @@ import {selectMetric} from '../../actions/index.js';
 class MetricsItem extends Component{
   render(){
     return(
-      <td
+      <div className="td"
         id={this.props.metricName.replace(/\s+/g, '') + "Cell"}
         onClick={()=> {
           this.props.selectMetric(this.props.metricName);
@@ -24,7 +24,7 @@ class MetricsItem extends Component{
         <img src={this.props.url} alt={this.props.metricName}/>
         {this.props.metricLabel}
       </div>
-      </td>
+    </div>
     );
   }
 }
