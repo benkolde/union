@@ -29,42 +29,42 @@ class MetricsTable extends Component{
         </div>
         <p>Please select the metrics that your team would like to track each week.</p>
         <div id="metricstablediv">
-        <table id="metricstable">
-          <tbody>
-            <tr>
+        <div id="metricstable" className="table">
+          <div className="tbody">
+            <div className = "tr">
               {metricsTableItems[0]}
               {metricsTableItems[1]}
-            </tr>
-            <tr>
+            </div>
+            <div className = "tr">
               {metricsTableItems[2]}
               {metricsTableItems[3]}
-            </tr>
-            <tr>
+            </div>
+            <div className = "tr">
               {metricsTableItems[4]}
               {metricsTableItems[5]}
-            </tr>
-            <tr>
+            </div>
+            <div className = "tr">
               {metricsTableItems[6]}
               {metricsTableItems[7]}
-            </tr>
-            <tr>
+            </div>
+            <div className = "tr">
               {metricsTableItems[8]}
               {metricsTableItems[9]}
-            </tr>
-            <tr>
+            </div>
+            <div className = "tr">
               {metricsTableItems[10]}
               {metricsTableItems[11]}
-            </tr>
-            <tr>
+            </div>
+            <div className = "tr">
               {metricsTableItems[12]}
               {metricsTableItems[13]}
-            </tr>
-            <tr>
+            </div>
+            <div className = "tr">
               {metricsTableItems[14]}
               {metricsTableItems[15]}
-            </tr>
-          </tbody>
-        </table>
+            </div>
+          </div>
+        </div>
       </div>
       </div>
     );

@@ -36,6 +36,7 @@ class MetricsDisplayList extends Component {
     return(
       <ul id="metricsdisplay">
         <CSSTransitionGroup
+           id="metricslistspan"
            transitionName="example"
            transitionEnterTimeout={500}
            transitionLeaveTimeout={300}>

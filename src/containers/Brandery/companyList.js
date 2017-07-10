@@ -11,7 +11,7 @@ class CompanyList extends Component{
         <CompanyMetrics key={company} company={company}/>
       );
     }
-    return (<div>{CompanyListItems}</div>);
+    return (<div id="companylist">{CompanyListItems}</div>);
   }
 }
 

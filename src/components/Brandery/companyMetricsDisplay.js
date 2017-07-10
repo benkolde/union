@@ -30,74 +30,74 @@ class CompanyMetricsDisplay extends Component {
       );
     }
     return(
-      <table className="companymetricsdisplay">
-        <tbody>
-          <tr>
-            <td>
+      <div className="table companymetricsdisplay">
+        <div className="tbody">
+          <div className="tr">
+            <div className="td">
               {CompanyMetricsDisplayItems[0]}
-            </td>
-            <td>
+            </div>
+            <div className="td">
               {CompanyMetricsDisplayItems[1]}
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </div>
+          </div>
+          <div className="tr">
+            <div className="td">
               {CompanyMetricsDisplayItems[2]}
-            </td>
-            <td>
+            </div>
+            <div className="td">
               {CompanyMetricsDisplayItems[3]}
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </div>
+          </div>
+          <div className="tr">
+            <div className="td">
               {CompanyMetricsDisplayItems[4]}
-            </td>
-            <td>
+            </div>
+            <div className="td">
               {CompanyMetricsDisplayItems[5]}
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </div>
+          </div>
+          <div className="tr">
+            <div className="td">
               {CompanyMetricsDisplayItems[6]}
-            </td>
-            <td>
+            </div>
+            <div className="td">
               {CompanyMetricsDisplayItems[7]}
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </div>
+          </div>
+          <div className="tr">
+            <div className="td">
               {CompanyMetricsDisplayItems[8]}
-            </td>
-            <td>
+            </div>
+            <div className="td">
               {CompanyMetricsDisplayItems[9]}
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </div>
+          </div>
+          <div className="tr">
+            <div className="td">
               {CompanyMetricsDisplayItems[10]}
-            </td>
-            <td>
+            </div>
+            <div className="td">
               {CompanyMetricsDisplayItems[11]}
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </div>
+          </div>
+          <div className="tr">
+            <div className="td">
               {CompanyMetricsDisplayItems[12]}
-            </td>
-            <td>
+            </div>
+            <div className="td">
               {CompanyMetricsDisplayItems[13]}
-            </td>
-          </tr>
-          <tr>
-            <td>
+            </div>
+          </div>
+          <div className="tr">
+            <div className="td">
               {CompanyMetricsDisplayItems[14]}
-            </td>
-            <td>
+            </div>
+            <div className="td">
               {CompanyMetricsDisplayItems[15]}
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 }

@@ -23,7 +23,7 @@ class Profile extends Component{
         <div id="companybar" className="branderyBar">
           <Link to={{pathname: "/brandery"}}>
             <img className="exit" src="images/Enter 1.svg" alt=""/>
-            <h3>View All Companies</h3>
+            <h3 id="backtocomp">View All Companies</h3>
           </Link>
           <CompanyName companyProfName={this.props.company}/>
           <ProfileImage companyProfUrl={image}/>
