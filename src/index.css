@@ -608,12 +608,17 @@ p.example-leave.example-leave-active{
 }
 
 @media screen and (max-width: 1000px) {
-    #companybar h3{
+    #companybar #backtocomp{
       display: none;
     }
-    #companybar h2{
-      font-size: 80%;
+
+    #companybar #changepswd{
       text-align: right;
+      font-size: 60%;
+    }
+
+    #companybar h2{
+      display: none;
     }
     #dashboard{
       flex-direction: column;
