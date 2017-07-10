@@ -308,11 +308,7 @@ a{
   padding-left: 25px;
   padding-right: 25px;
   height: 70vh;
-<<<<<<< HEAD
-  width: 25%;
-=======
   width: 40%;
->>>>>>> redux
   overflow-y: scroll;
   overflow-x: hidden;
   display: flex;
