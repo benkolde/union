@@ -15,6 +15,7 @@ const InputList = (props) => {
   return(
     <ul id="inputlist">
       <CSSTransitionGroup
+        id="inputlistspan"
          transitionName="example"
          transitionEnterTimeout={500}
          transitionLeaveTimeout={300}>

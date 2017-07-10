@@ -18,9 +18,11 @@ class CompanyBar extends Component{
     return(
       <div id="companiesbar">
         <h4>Companies</h4>
+        <div id="companiesbarimages">
         <ul>
           {CompanyBarItems}
         </ul>
+        </div>
       </div>
     );
   }

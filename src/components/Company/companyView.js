@@ -75,8 +75,10 @@ class CompanyView extends Component{
           <Profile onChangePassword = {() => this.changePassword()}/>
           <div id="dashboard">
             <Metrics onMetricSelect={(selectedMetric) => this.selectMetric(selectedMetric)}/>
+            <div id="dashboardlists">
             <InputList availableMetrics={this.state.selectedMetrics}/>
             <MetricsDisplayList/>
+            </div>
           </div>
         </div>
       );
